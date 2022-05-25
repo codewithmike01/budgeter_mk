@@ -17,7 +17,7 @@
         ['Insurance', 'insurance.png'],
         ['Sport','sports.png'],
         ['Transportation','transportation.png']
-        ]) , {}, class:'form-select mb-4', aria_label: "form-select category" %>
+        ]) , {}, class:'form-select mb-4', id: 'icon', aria_label: "form-select category" %>
          <%= form.hidden_field :user_id, value: current_user.id %>
         <div>
           <%= form.label :name %>

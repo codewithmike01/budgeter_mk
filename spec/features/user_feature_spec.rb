@@ -37,7 +37,7 @@ RSpec.describe 'Feature User login', type: :feature do
     expect(page).to have_content('Invalid Email or password.')
   end
 
-  it 'Show error when submit with correct fields values' do
+  it 'Login with correct fields values' do
     user = User.create!(name: 'Jonyole', email: 'e@gmail.com', confirmed_at: Time.now, password: 'password',
                         password_confirmation: 'password')
 
@@ -45,7 +45,7 @@ RSpec.describe 'Feature User login', type: :feature do
     fill_in 'Password', with: user.password
     click_button 'Log in'
 
-    expect(page).to have_current_path('/')
+    expect(page).to have_current_path("/users/#{user.id}")
     expect(page).to have_content('Signed in successfully.')
   end
 end
