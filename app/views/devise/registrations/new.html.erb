@@ -27,7 +27,6 @@
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "new-password", class:'form-control' %>
   </div>
-  <% form.hidden :confirmed_at, value: Time.now %>
 
   <div class="actions mb-4">
     <%= f.submit "Sign up", class: 'btn main-bg text-light' %>
