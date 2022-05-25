@@ -1,11 +1,9 @@
 class GroupsController < ApplicationController
-
-  def show 
+  def show
     # Group id
     @groups = Group.where(user_id: current_user.id)
     @category_groups = CategoryGroup.all.order(created_at: :desc)
   end
-
 
   def new
     @groups = Group.all

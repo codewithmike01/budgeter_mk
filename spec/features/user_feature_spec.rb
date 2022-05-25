@@ -48,8 +48,4 @@ RSpec.describe 'Feature User login', type: :feature do
     expect(page).to have_current_path('/')
     expect(page).to have_content('Signed in successfully.')
   end
-
 end
-
-
-

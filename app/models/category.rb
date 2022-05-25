@@ -3,5 +3,5 @@ class Category < ApplicationRecord
   has_many :groups, through: :categorygroups
 
   validates :amount, presence: true
-  validates :name, presence: true 
+  validates :name, presence: true
 end
