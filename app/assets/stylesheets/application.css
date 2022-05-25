@@ -13,3 +13,31 @@
  *= require_tree .
  *= require_self
  */
+
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+.fm {
+  font-family: 'Pacifico', cursive;
+}
+
+/* body {
+  background-color: rgb(247, 247, 213);
+} */
+
+.cat-color {
+  background-color: #5fb523;
+}
+
+.footer-main {
+  position: fixed;
+  bottom: 0;
+}
+
+.main-bg {
+  background-color: #3778c2;
+}
+
+.img {
+  width: 45px;
+  height: 45px;
+}
