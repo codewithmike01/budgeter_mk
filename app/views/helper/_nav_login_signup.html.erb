@@ -1,8 +1,16 @@
 <nav class="navbar navbar-dark main-bg ">
   <div class="container">
-
+   <%- if controller_name == 'confirmations' %>
+      <%= link_to '←', root_path , class:'text-light text-decoration-none fs-2' %>
+      <a class="navbar-brand" href="#">Resend confirmation info</a>
+      <%= link_to 'Next',{}, class: 'text-light fs-5 text-decoration-none'%>
+    <%end%>
    
-  
+    <%- if controller_name == 'passwords' %>
+      <%= link_to '←', root_path , class:'text-light text-decoration-none fs-2' %>
+      <a class="navbar-brand" href="#">Forgot password</a>
+      <%= link_to 'Next',{}, class: 'text-light fs-5 text-decoration-none'%>
+    <%end%>
        
 
     <%- if controller_name == 'registrations' %>
