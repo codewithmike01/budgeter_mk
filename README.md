@@ -2,7 +2,13 @@
 
 > In this project, I created a budget calculator website, which has categories of budgets in which you can enter transaction cost for each sub-group in other to get the total budget price in that particular budget category.
 
-## Link to video(not avialable yet)
+## Link to video
+
+- [Explain](https://www.loom.com/share/a99f925bb6f54a1fb53b45cd32437368)
+
+## Link to App
+
+- [Bugdeter-mk](https://blooming-depths-30594.herokuapp.com/)
 
 ## Built With
 
