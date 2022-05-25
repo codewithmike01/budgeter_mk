@@ -1,0 +1,18 @@
+<%= render 'helper/nav_login_signup'%>
+
+<div class = 'conatinaer'>
+    <div class = 'container w-70'>
+    <%= form_with model: @category, url: user_group_categories_path, scope: :category  do |form| %>
+      <%= form.label 'Spending name', class: 'fs-5 mb-2 mt-4' %>
+      <%= form.text_field :name, autofocus: true, autocomplete: "name", class:'form-control', require: true%>
+      
+       <%= form.label :amount, class: 'fs-5 mb-2 mt-4' %>
+       <%= form.text_field :amount, autofocus: true, autocomplete: "amount", class:'form-control mb-4', require: true%>
+
+
+      <div class="actions col-4 mx-auto mb-3">
+        <%= form.submit "Add Spending", class: 'btn cat-color text-light mt-3' %>
+      </div>
+
+    <%end%>
+</div>

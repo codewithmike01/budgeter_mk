@@ -1,0 +1,31 @@
+<%= render 'helper/nav_login_signup' %>
+
+<div class = 'container py-4'>
+  <h2 class = 'text-center'> Category </h2>
+
+  <div class = 'container w-70'>
+    <%= form_with model: @group, url: user_groups_path, scope: :group  do |form| %>
+
+      <%= form.label 'Select a Category', class: 'fs-5 mb-2' %>
+      <%= form.select :icon, options_for_select([
+        ['Entertainment','party.png'],
+        ['Cloth','cloth.png'],
+        ['Education','education.png'],
+        ['Food', 'food.png'],
+        ['Hospital','hospital.png'],
+        ['House','house.png'],
+        ['Insurance', 'insurance.png'],
+        ['Sport','sports.png'],
+        ['Transportation','transportation.png']
+        ]) , {}, class:'form-select mb-4', id: 'icon', aria_label: "form-select category" %>
+         <%= form.hidden_field :user_id, value: current_user.id %>
+        <div>
+          <%= form.label :name %>
+          <%= form.text_field :name, class: 'form-control' %>
+        </div>
+        <div class = 'text-center'>
+          <%= form.submit 'Add category', class: 'btn cat-color text-light mt-3' %>
+        <div>
+    <%end%>
+  </div>
+</div>

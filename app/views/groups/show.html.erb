@@ -1,0 +1,45 @@
+<nav class="navbar navbar-dark main-bg ">
+  <div class="container">
+      <%= link_to '←', user_path(current_user.id) , class:'text-light text-decoration-none fs-2' %>
+      <a class="navbar-brand" href="#">Spending</a>
+      <%= link_to 'Next',{}, class: 'text-light fs-5 text-decoration-none'%>
+  </div>
+</nav>
+<div class = 'container pt-4 '>
+  <% @groups.each do |group| %> 
+    <% if group.id == params[:id].to_i %>
+      <div class = 'd-flex flex-row justify-content-between w-70'>
+          <div> <%= image_tag group.icon, class:'img' %> </div>
+          <p> <strong><%= group.name %></strong> total spending: <strong>$<%= Group.total_spending(params[:id]) %> </strong></p>
+      <%end%> 
+    <%end%>
+  </div>
+   <div class = 'container py-3'>
+      <% @category_groups.each do |cat_group| %>
+        <% if cat_group.group_id == params[:id].to_i%>
+          <% categories = Category.where(id: cat_group.category_id)%>
+          <% categories.each do |category|%>
+            <div class = 'card border-white'>
+              <div class = 'card-body d-flex flex-row justify-content-between'>
+                <div class = 'd-flex flex-column'>
+                <p> <strong><%= category.name %></strong></p>
+                <p>Date: &nbsp; <%= ((category.created_at).to_s)[0, 10] %> </p>
+                </div>
+                <p> <strong>$<%= category.amount %></strong></p>
+              </div>
+            </div>
+          <%end%>
+        <%end%>
+      <%end%>
+    </div>
+  <div class = 'container cat-color py-3'>
+    <div class = 'card cat-color border-white'>
+      <div class = 'card-body text-center'>
+        <%= link_to 'Add new Spending',new_user_group_category_path(current_user.id, params[:id]), class:'text-light text-decoration-none fs-4'%>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+

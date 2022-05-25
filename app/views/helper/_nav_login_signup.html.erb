@@ -1,0 +1,42 @@
+<nav class="navbar navbar-dark main-bg ">
+  <div class="container">
+   <%- if controller_name == 'confirmations' %>
+      <%= link_to '←', root_path , class:'text-light text-decoration-none fs-2' %>
+      <a class="navbar-brand" href="#">Resend confirmation info</a>
+      <%= link_to 'Next',{}, class: 'text-light fs-5 text-decoration-none'%>
+    <%end%>
+   
+    <%- if controller_name == 'passwords' %>
+      <%= link_to '←', root_path , class:'text-light text-decoration-none fs-2' %>
+      <a class="navbar-brand" href="#">Forgot password</a>
+      <%= link_to 'Next',{}, class: 'text-light fs-5 text-decoration-none'%>
+    <%end%>
+       
+
+    <%- if controller_name == 'registrations' %>
+      <%= link_to '←', root_path , class:'text-light text-decoration-none fs-2' %>
+      <a class="navbar-brand" href="#">Register</a>
+      <%= link_to 'Next',{}, class: 'text-light fs-5 text-decoration-none'%>
+    <%end%>
+
+    <%- if controller_name == 'categories' %>
+      <%= link_to '←', user_path(current_user.id) , class:'text-light text-decoration-none fs-2' %>
+      <a class="navbar-brand" href="#">New category Spending</a>
+      <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-search text-light" viewBox="0 0 16 16">
+      <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+      </svg>
+    <%end%>
+
+    <%- if controller_name == 'sessions' %>
+       <%= link_to '←', root_path, class:'text-light text-decoration-none fs-2' %>
+       <a class="navbar-brand" href="#">Login</a>
+       <%= link_to 'Login',{}, class: 'text-light fs-5 text-decoration-none'%>
+    <%end%>
+
+      <%- if controller_name == 'groups' %>
+      <%= link_to '←', user_path(current_user.id), class:'text-light text-decoration-none fs-2' %>
+       <a class="navbar-brand" href="#">Categories</a>
+       <%= link_to 'Next',{}, class: 'text-light fs-5 text-decoration-none'%>
+    <%end%>
+  </div>
+</nav>

@@ -1,0 +1,33 @@
+<%= render 'helper/navbar_transaction'%>
+<%= render 'helper/notice'%>
+<div class = 'bg-grey'>
+  <div class="card w-100 mb-4">
+    <div class = 'card-body d-flex flex-row align-items-center justify-content-between'>
+      <p> <strong> Welcome user <%= @user.name %> </strong> </p>
+      <div>
+        <%= button_to 'Logout', destroy_user_session_path , method: :delete,  class: 'btn main-bg text-light' %>
+      </div>
+    </div>
+  </div>
+
+  <div class = 'container'>
+    <% @groups.each do |group| %>
+      <div class="card w-100 mb-3 d-flex flex-row align-items-center justify-content-between">
+        <div class="card-body d-flex flex-row align-items-center justify-content-between">
+            <%= image_tag group.icon, class:'img' %>
+          <%= link_to group.name, user_group_path(current_user.id, group.id), class:'fs-5' %>
+          <p class="card-text text-bold h6"><strong>$<%= Group.total_spending(group.id) %></strong></p>
+        </div>
+      </div>
+    <%end%>
+  </div>
+
+  <div class = 'container cat-color py-3'>
+    <div class = 'card cat-color border-white'>
+      <div class = 'card-body text-center'>
+        <%= link_to 'Add Category', new_user_group_path(params[:id]), class:'text-light text-decoration-none fs-4'%>
+      </div>
+    </div>
+  </div>
+</div>
+
