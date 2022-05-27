@@ -1,4 +1,4 @@
-# Rails project: Happy blog
+# Rails project: Budget App
 
 > In this project, I created a budget calculator website, which has categories of budgets in which you can enter transaction cost for each sub-group in other to get the total budget price in that particular budget category.
 
